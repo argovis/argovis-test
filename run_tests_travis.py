@@ -9,7 +9,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/home"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -17,7 +17,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/ar"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -25,7 +25,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/covar"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -33,7 +33,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/grid"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -41,7 +41,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/profview"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -49,7 +49,7 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/ng/covar"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
 
@@ -57,9 +57,11 @@ class TestArgovisWebappRunning(unittest.TestCase):
         url = "https://argovis.colorado.edu/catalog/profiles/2902536_900/page"
         resp = requests.get(url)
         if not resp.status_code // 100 == 2:
-            self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
+    def test_email(self):
+        self.assertTrue(False, 'Just checking that email is sent')
 
 if __name__ == '__main__':
     unittest.main()
