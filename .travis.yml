@@ -8,9 +8,9 @@ script:
   - python run_tests_travis.py
 
 notifications:
-email:
-    recipients:
-    - tyler.tucker@colorado.edu
-    - argovistesting@gmail.com
-    on_success: never # default: change
-    on_failure: always # default: always
+    email:
+        recipients:
+        - tyler.tucker@colorado.edu
+        - argovistesting@gmail.com
+        on_success: never # default: change
+        on_failure: always # default: always
