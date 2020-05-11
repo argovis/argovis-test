@@ -60,8 +60,6 @@ class TestArgovisWebappRunning(unittest.TestCase):
             self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
-    def test_email(self):
-        self.assertTrue(False, 'Just checking that email is sent')
 
 if __name__ == '__main__':
     unittest.main()
