@@ -6,7 +6,6 @@ install:
   - pip install requests
 script:
   - python run_tests_travis.py
-
 notifications:
     email:
         recipients:
