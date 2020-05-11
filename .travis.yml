@@ -10,6 +10,13 @@ install:
 script:
   - python run_tests_travis.py
 notifications:
-    slack: argovis-testing:HEHQGPzyqGFuovtDGAqXrE8Q
+    slack:
+        rooms:
+          secure: CZjwc0J7yVmkTU7BxZxEybJlruhyTwQO+ICTBDVQLuJWRR+qZM8tKeKknOjccXLZnglERUj9bJTL3QQzIhAmxpkNEj+NzBF4UU5E+09t9hGAPMk0/PYpPLnczHAMJgGJ6CcLvCi7t8ftaGxPZBHikl88gCRKBmdgzvm1IRMCw4N8XP2InTOsFdQ80XBeMiFHuDOJgAQvvKaUpKvpSArOr2MQC92y4VJsXQjYLoIx+MdT16FDH3v4bBAXrpThXj03R8Abpj07LeV/L3N7J8YxVEwFXMJwskYkl3dwl9TUPSlum0mVQm3YlIVeeB4tZUZA6M7GqI9O3ZO3VSmgEGqCpNaAUi6d+oTwhudMGJCLcG8JjWPa7Xe4wdTv1w+bCTLum5cP+TzqSk0+pTrFaZOnkRw5AMkcaWW8816L0Q8joKf4Dt3EtBNg49x+eIgWWUP5I+5ChSgj2UqU72xCerVeSSE4iQRt0leqSomf9vGHhlW1YbF0sGT8eavSUcLp5y1B7xIlYxe6YhUSy1hx+oqAqJjIfo3eBettYk0fFfyF4WDKOBg2DfqHhYslPf/rd3s88Q2ddNI0jWXUxip+s+LhntUfuvtGGWwtxdis2J5YRB8MBFKf6ioPPWdMDqFosXMaEarYvHzPOXdaIC1mV97GKuBG+2o/2WzTcW46qKgp6d4=
+    
     on_success: always
     on_failure: always
+    template:
+        - "Repo `%{repository_slug}` *%{result}* build (<%{build_url}|#%{build_number}>) for commit (<%{compare_url}|%{commit}>) on branch `%{branch}`."
+        - "Execution time: *%{duration}*"
+        - "Message: %{message}"
