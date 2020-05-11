@@ -4,9 +4,8 @@ python:
 cache: pip
 install:
   - pip install requests
-  - pip install yagmail
 script:
-  - python run_tests.py
+  - python run_tests_travis.py
 
 notifications:
 email:

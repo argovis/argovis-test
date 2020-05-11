@@ -1,4 +1,3 @@
-import yagmail
 import requests
 import unittest
 import pdb
@@ -61,36 +60,6 @@ class TestArgovisWebappRunning(unittest.TestCase):
             self.assertFalse(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
-
-def run_tests():
-    testsRun = []
-    testsRun.append( check_home_module() )
-    testsRun.append( check_grid_module() )
-    testsRun.append( check_ar_module() )
-    testsRun.append( check_covar_module() )
-    testsRun.append( check_profview_module() )
-    testsRun.append( dummy_test_that_always_fails() )
-    failedTests = [ test for test in testsRun if isinstance(test, str) ]
-    write_report(failedTests)
-    if not len(failedTests)==0:
-        send_email()
-
-def write_report(failedTests):
-    with open('test-report.txt', 'w') as filehandle:
-        filehandle.writelines("%s\n" % test for test in failedTests)
-
-def send_email():
-    receiver = "argovistesting@gmail.com"
-    body = "Hello there from Yagmail"
-    password = input("Type your password and press enter: ")
-    filename='./test-report.txt'
-    yag = yagmail.SMTP(receiver, password)
-    yag.send(
-        to=receiver,
-        subject="Yagmail test with attachment",
-        contents=body, 
-        attachments=filename,
-    )
 
 if __name__ == '__main__':
     unittest.main()
