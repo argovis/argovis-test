@@ -1,0 +1,15 @@
+language: python
+python:
+  - "3.8"
+cache: pip
+install:
+  - pip install -r requirements.txt
+script:
+  - python run_tests.py
+
+notifications:
+email:
+    recipients:
+    - tyler.tucker@colorado.edu
+    on_success: never # default: change
+    on_failure: always # default: always
