@@ -9,7 +9,8 @@ script:
 notifications:
     email:
         recipients:
+        - tylertucker202@gmail.com
         - tyler.tucker@colorado.edu
         - argovistesting@gmail.com
-        on_success: never # default: change
+        on_success: always # default: change
         on_failure: always # default: always
