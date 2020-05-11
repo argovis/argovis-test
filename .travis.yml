@@ -7,11 +7,6 @@ install:
 script:
   - python run_tests_travis.py
 notifications:
-    email:
-        recipients:
-            - tylertucker202@gmail.com
-            - tyler.tucker@colorado.edu
-            - argovistesting@gmail.com
-        on_success: always # default: change
-        on_failure: always # default: always
     slack: argovis-testing:HEHQGPzyqGFuovtDGAqXrE8Q
+        on_success: always # default: always
+        on_failure: always # default: always
