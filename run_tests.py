@@ -2,7 +2,8 @@ import yagmail
 import requests
 import unittest
 import pdb
-
+import ast
+from datetime import datetime, timedelta
 
 class TestArgovisWebappRunning(unittest.TestCase):
 
@@ -61,6 +62,20 @@ class TestArgovisWebappRunning(unittest.TestCase):
             self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
         else: 
             self.assertTrue(True)
+
+    def test_check_current_database(self):
+        url = "https://argovis.colorado.edu/selection/overview"
+        resp = requests.get(url)
+        if not resp.status_code // 100 == 2:
+            self.assertTrue(False, "Error: url: {0} Unexpected response {1}".format(url, resp))
+        else: 
+            self.assertTrue(True)
+        dict_str = resp.content.decode("UTF-8")
+        overview = ast.literal_eval(dict_str)
+        dateUpdated = datetime.strptime(overview["lastAdded"], '%Y-%m-%dT%H:%M:%S.%fZ')
+        today = datetime.now()
+        dt = today - dateUpdated
+        self.assertTrue(dt.days == 0, "date updated does not match todays date")
 
 def run_tests():
     testsRun = []
